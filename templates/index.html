@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+    <title>MangaCloud</title>
+    
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>MangaCloud</h1>
+
+        <div class="search-bar">
+            <input id="manga" placeholder="Enter Manga Title...">
+            <input id="chapter" placeholder="Ch. No.">
+            <button onclick="fetchManga()">Search Manga</button>
+        </div>
+
+        <div class="viewer-container">
+            <div id="status" class="loader">Ready to explore...</div>
+            <canvas id="viewer" width="600"></canvas>
+        </div>
+
+        <div class="controls">
+            <button class="btn-secondary" onclick="prevPage()">← Prev</button>
+            <button class="btn-secondary" onclick="nextPage()">Next →</button>
+            <button class="dnd" onclick="downloadPDF()">Download PDF</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js')}}"></script>
+</body>
+
+</html>
